@@ -1,0 +1,19 @@
+.align-img {
+    align-self: center;
+    padding-left: 5%;
+}
+
+.card-hover {
+    cursor: pointer;
+    &:hover {
+        cursor: pointer;
+        background-color: #e3efff !important;
+      }
+}
+
+.load-more {
+    text-align: center;
+    cursor: pointer;
+    color: cornflowerblue;
+    font-size: small;
+}
