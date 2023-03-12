@@ -1,1 +1,30 @@
-<p>beer-detail works!</p>
+<div class="container">
+    <a class="btn btn-primary btn-md btn-add" (click)="openModal()" role="button">Add a new beer</a>
+</div>
+
+
+
+<div class="container pt-5">
+    <div class="d-flex justify-content-center align-items-center pt-5" *ngIf='beerList.length ==0'>
+        <p>
+            Nothing to see yet.<br />
+            <a role="button" style="color: #3b71ca;" (click)="openModal()">Click here</a> to add your new beer!<br />
+        </p>
+    </div>
+    <div class="card mb-3" style="max-width: 1500px;" *ngFor="let beer of beerList">
+        <div class="row g-0 card-hover">
+            <div class="col-md-2 align-img">
+                <img src="../../../assets/beer.jpg" class="img-fluid rounded-start" style=" max-width: 30%; " />
+            </div>
+            <div class="col-md-10">
+                <div class="card-body">
+                    <h5 class="card-title">{{beer.name}}</h5>
+                    <h6 class="card-title" style="color: darkgoldenrod;">{{beer.tagline}}</h6>
+                    <p class="card-text">
+                        {{beer.description}}
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

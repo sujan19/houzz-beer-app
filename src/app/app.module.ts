@@ -22,12 +22,14 @@ import { MdbTooltipModule } from 'mdb-angular-ui-kit/tooltip';
 import { MdbValidationModule } from 'mdb-angular-ui-kit/validation';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ReactiveFormsModule } from '@angular/forms';
 import { BeerListComponent } from './components/beer/beer-list/beer-list.component';
 import { BeerDetailComponent } from './components/beer/beer-detail/beer-detail.component';
 import { BeerComponent } from './components/beer/beer.component';
 import { HttpClientService } from './services/http-client.service';
 import { BeerService } from './services/beer.service';
 import { HttpClientModule } from '@angular/common/http';
+import { AddBeerModalComponent } from './modals/add-beer-modal/add-beer-modal.component';
 
 @NgModule({
   declarations: [
@@ -35,6 +37,7 @@ import { HttpClientModule } from '@angular/common/http';
     BeerListComponent,
     BeerDetailComponent,
     BeerComponent,
+    AddBeerModalComponent,
   ],
   imports: [
     BrowserModule,
@@ -56,6 +59,7 @@ import { HttpClientModule } from '@angular/common/http';
     MdbValidationModule,
     AppRoutingModule,
     HttpClientModule,
+    ReactiveFormsModule,
   ],
   providers: [HttpClientService, BeerService],
   bootstrap: [AppComponent],

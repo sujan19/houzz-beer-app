@@ -1,0 +1,56 @@
+<div class="modal-header">
+    <h5 class="modal-title" id="exampleModalLabel">Add a New Beer</h5>
+    <button type="button" class="btn-close" aria-label="Close" (click)="modalRef.close()"></button>
+</div>
+<form [formGroup]="beerDetailForm" (ngSubmit)="onSubmit()">
+    <div class="modal-body">
+        <div class="container">
+            <div class="row">
+                <div class="col-md">
+                    <img src="../../../assets/beer.jpg" class="img-fluid rounded-start" style=" max-width: 10%; " />
+                </div>
+            </div>
+            <div class="row input">
+                <div class="col-md">
+                    <mdb-form-control>
+                        <input mdbInput type="text" id="name" class="form-control" formControlName="name" />
+                        <label mdbLabel
+                            [ngClass]="((beerFormControl.name.touched || submitted) && beerFormControl.name.errors?.required)? 'text-danger' : 'form-label'"
+                            for="name">Beer Name*</label>
+                        <!-- <span class="text-danger"
+                            *ngIf="(beerFormControl.name.touched || submitted) && beerFormControl.name.errors?.required">
+                            Name is required
+                        </span> -->
+                    </mdb-form-control>
+                </div>
+            </div>
+            <div class="row input">
+                <div class="col-md">
+                    <mdb-form-control>
+                        <input mdbInput type="text" id="tagline" class="form-control" formControlName="tagline" />
+                        <label mdbLabel
+                            [ngClass]="((beerFormControl.tagline.touched || submitted) && beerFormControl.tagline.errors?.required)? 'text-danger' : 'form-label'"
+                            for="tagline">Genre*</label>
+                    </mdb-form-control>
+                </div>
+            </div>
+            <div class="row input">
+                <div class="col-md">
+                    <mdb-form-control>
+                        <textarea mdbInput class="form-control" id="description" rows="4"
+                            formControlName="description"></textarea>
+                        <label mdbLabel
+                            [ngClass]="((beerFormControl.description.touched || submitted) && beerFormControl.description.errors?.required)? 'text-danger' : 'form-label'"
+                            for="description">Description*</label>
+                    </mdb-form-control>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" (click)="close()">
+            Cancel
+        </button>
+        <button type="submit" class="btn btn-primary">Save</button>
+    </div>
+</form>
